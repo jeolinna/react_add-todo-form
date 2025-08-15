@@ -41,7 +41,7 @@ export const App = () => {
     setHasUserError(!selectedUser);
 
     if (title && selectedUser) {
-      const maxId = Math.max(...todos.map(t => t.id));
+      const maxId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) : 0;
       const newId = maxId + 1;
       const newUser = usersFromServer.find(user => user.id === selectedUser);
 
